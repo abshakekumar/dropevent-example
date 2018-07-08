@@ -1,21 +1,21 @@
 var DroppedHandler = (function DroppedHandler() {
 
     function _preventDefault(elements) {
-            elements.forEach((dropzone) => {
-                dropzone.ondrop =  function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                };
-            });
+        elements.forEach((dropzone) => {
+            dropzone.ondrop = function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            };
+        });
     }
 
     function handle(droppedElements, handlerFunction) {
-            _preventDefault(droppedElements);
-            droppedElements.forEach((dropzone) => {
-                dropzone.ondrop = function (e) {
-                    typeof handlerFunction === 'function' && handlerFunction(e,dropzone);
-                };
-            });
+        _preventDefault(droppedElements);
+        droppedElements.forEach((dropzone) => {
+            dropzone.ondrop = function(e) {
+                typeof handlerFunction === 'function' && handlerFunction(e, dropzone);
+            };
+        });
     }
 
     var dropHandlerApi = {
@@ -25,7 +25,7 @@ var DroppedHandler = (function DroppedHandler() {
     return dropHandlerApi;
 })();
 
-$(document).ready(function () {
+$(document).ready(function() {
     function readURL(input) {
         var dataUploadId = input.getAttribute('data-upload-id');
         if (input.files && input.files[0]) {
@@ -33,12 +33,12 @@ $(document).ready(function () {
         }
     }
 
-    $(".upload-input1").on('change', function (e) {
+    $(".upload-input1").on('change', function(e) {
         readURL(this);
     });
 
     // preventing any dropped image to get opened in browser
-    $('.container').on('drag dragstart dragend dragover dragenter dragleave drop', function (e) {
+    $('body').on('drag dragstart dragend dragover dragenter dragleave drop', function(e) {
         e.preventDefault();
         e.stopPropagation();
     });
@@ -54,7 +54,7 @@ $(document).ready(function () {
 
     function handleFile(dataUploadId, inputFile) {
         var reader = new FileReader();
-        reader.onload = function (e) {
+        reader.onload = function(e) {
             $('#' + dataUploadId).attr('src', e.target.result);
         }
         reader.readAsDataURL(inputFile);

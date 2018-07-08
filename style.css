@@ -1,81 +1,24 @@
-.c-navbar li {
-    margin: 0 15px;
-}
-
-.content-header {
-    padding: 10px 30px;
-    background: #e5e5e5;
-    margin: 30px 0;
-}
-
-.caption {    
-    background: #e5e5e5;
-}
-
-.caption a:not(:first-child) {
-    margin-left: 10px;
-}
-
-.thumbnail .caption img {
-    height: 50px;
-    width: 50px;    
-}
-
-.c-carousel .carousel-indicators {
-    background: #e5e5e5;
-    margin: 0;
-    position: static;
-    padding: 10px;
-    overflow-x: auto;
-}
-
-.c-carousel .carousel-indicators strong {
-    position: absolute;
-    z-index: 999;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
-    text-indent: 0
-}
-
-.c-carousel .carousel-indicators > li {
-    width: 50px;
-    height: 50px;
-    margin: 0 5px;
-    min-width: 50px;
-}
-
-.c-carousel .carousel-indicators img {
+html,
+body {
     height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.checkbox input {
-    margin-right: 7px;
+.container {
+    height: 100%;
+    padding: 25px;
 }
 
-.c-carousel .carousel-item img,
-.image-banner img {
-    height: 250px;
+.overlay {
+    background: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
 }
 
-.fig-cap {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    top: 0;
-    z-index: 1;
-    background: #e5e5e5;
-    padding: 10px;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.cap-head {
-    justify-content: space-between;
-    display: flex;
-}
-
- .upload-image .btn-file {
+.upload-image .btn-file {
     transform: translate(-50%, -50%);
     position: absolute;
     left: 50%;
@@ -86,6 +29,12 @@
     position: relative;
     overflow: hidden;
 }
+
+.btn {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
 .btn-file input[type=file] {
     position: absolute;
     top: 0;
@@ -96,7 +45,7 @@
     text-align: right;
     filter: alpha(opacity=0);
     opacity: 0;
-    outline: none;   
+    outline: none;
     cursor: inherit;
     display: block;
 }
@@ -107,11 +56,19 @@
     width: calc(100% - 20px);
     height: calc(100% - 20px);
     top: 0;
-    border: 3px dashed #888585;
-    border-radius: 10px;
+    border: 2px dashed #888585;
     margin: 10px;
+}
+
+.carousel-inner {
+    width: 500px;
+    margin: 0 auto;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .container .carousel-inner:hover .upload-image {
     display: block;
- }
+}
