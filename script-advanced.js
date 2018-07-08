@@ -47,7 +47,6 @@ $(document).ready(function() {
     var dropzoneElements = document.querySelectorAll('.carousel-inner');
     DroppedHandler.handle(dropzoneElements, function(e, dropzone) {
         var file = e.dataTransfer.files[0];
-        console.log('DropZone :', dropzone);
         var dataUploadId = $(dropzone).find('input').attr('data-upload-id');
         handleFile(dataUploadId, file);
     });
